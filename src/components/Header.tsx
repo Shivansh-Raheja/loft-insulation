@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Menu, X, ChevronDown, Phone, Quote, Home, Info, Star, 
   Wrench, Building, Users, Key, MapPin, Layers, Wind, 
@@ -28,6 +29,7 @@ const Header = () => {
     { name: 'Commercial & Industrial Buildings', href: '/sectors/commercial-industrial', icon: 'Building' },
     { name: 'Housing Associations / Builders', href: '/sectors/housing-associations', icon: 'Users' },
     { name: 'Landlords / Property Managers', href: '/sectors/landlords-property-managers', icon: 'Key' },
+    { name: 'Public Sector', href: '/sectors/public-sector', icon: 'Shield' },
     { name: 'Countries / Locations', href: '/sectors/countries-locations', icon: 'MapPin' },
   ];
 
@@ -82,17 +84,21 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">LIS</span>
+              <div className="h-10 w-auto">
+                <Image
+                  src="/image.png"
+                  alt="Loft Insulation Services"
+                  width={120}
+                  height={40}
+                  className="h-full w-auto object-contain"
+                  priority
+                />
               </div>
-              <span className="ml-2 text-xl font-bold text-gray-900">
-                Loft Insulation Services
-              </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-0.5">
+          <nav className="hidden lg:flex items-center space-x-2">
             {navigation.map((item) => {
               const IconComponent = getIcon(item.icon);
               return (
@@ -103,17 +109,17 @@ const Header = () => {
                   onMouseLeave={() => item.dropdown && handleMouseLeave()}
                 >
                   {item.dropdown ? (
-                    <button className="flex items-center text-gray-700 hover:text-blue-600 px-2 py-2 text-xs font-medium transition-colors duration-200 rounded-lg hover:bg-gray-50">
-                      <IconComponent className="h-3.5 w-3.5 mr-1.5" />
+                    <button className="flex items-center text-gray-700 hover:text-primary-blue px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-lg hover:bg-gray-50">
+                      <IconComponent className="h-4 w-4 mr-2" />
                       {item.name}
-                      <ChevronDown className="ml-1 h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                      <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
                     </button>
                   ) : (
                     <Link
                       href={item.href}
-                      className="flex items-center text-gray-700 hover:text-blue-600 px-2 py-2 text-xs font-medium transition-colors duration-200 rounded-lg hover:bg-gray-50"
+                      className="flex items-center text-gray-700 hover:text-primary-blue px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-lg hover:bg-gray-50"
                     >
-                      <IconComponent className="h-3.5 w-3.5 mr-1.5" />
+                      <IconComponent className="h-4 w-4 mr-2" />
                       {item.name}
                     </Link>
                   )}
@@ -122,22 +128,33 @@ const Header = () => {
                   {item.dropdown && (
                     <div
                       className={cn(
-                        'absolute top-full left-0 w-64 bg-white shadow-xl rounded-lg py-2 z-50 transition-all duration-200 border border-gray-100',
+                        'absolute top-full left-0 w-72 bg-white shadow-xl rounded-lg py-2 z-50 transition-all duration-200 border border-gray-100',
                         activeDropdown === item.name
                           ? 'opacity-100 visible translate-y-0'
                           : 'opacity-0 invisible -translate-y-2 pointer-events-none'
                       )}
                     >
-                      <div className="px-2 py-1">
-                        {item.dropdown.map((dropdownItem) => {
+                      <div className="px-3 py-2">
+                        {item.dropdown.map((dropdownItem, index) => {
                           const DropdownIcon = getIcon(dropdownItem.icon);
+                          const colors = [
+                            'text-blue-600 hover:bg-blue-50',
+                            'text-green-600 hover:bg-green-50', 
+                            'text-purple-600 hover:bg-purple-50',
+                            'text-orange-600 hover:bg-orange-50',
+                            'text-pink-600 hover:bg-pink-50',
+                            'text-indigo-600 hover:bg-indigo-50',
+                            'text-cyan-600 hover:bg-cyan-50',
+                            'text-emerald-600 hover:bg-emerald-50'
+                          ];
+                          const colorClass = colors[index % colors.length];
                           return (
                             <Link
                               key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="flex items-center px-3 py-2 text-xs text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200 rounded-md group/item"
+                              className={`flex items-center px-3 py-2.5 text-sm font-medium transition-colors duration-200 rounded-lg group/item ${colorClass}`}
                             >
-                              <DropdownIcon className="h-3.5 w-3.5 mr-2 text-gray-400 group-hover/item:text-blue-600" />
+                              <DropdownIcon className="h-4 w-4 mr-3" />
                               <span className="flex-1">{dropdownItem.name}</span>
                             </Link>
                           );
@@ -151,19 +168,19 @@ const Header = () => {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-2">
+          <div className="hidden lg:flex items-center space-x-3">
             <Link
               href="/contact"
-              className="flex items-center text-gray-700 hover:text-blue-600 px-3 py-2 text-xs font-medium transition-colors duration-200 rounded-lg hover:bg-gray-50"
+              className="flex items-center text-gray-700 hover:text-primary-blue px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-lg hover:bg-gray-50"
             >
-              <Phone className="h-3.5 w-3.5 mr-1.5" />
+              <Phone className="h-4 w-4 mr-2" />
               Contact Us
             </Link>
             <Link
               href="/quote"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center shadow-lg hover:shadow-xl whitespace-nowrap"
+              className="bg-primary-blue text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center shadow-lg hover:shadow-xl whitespace-nowrap"
             >
-              <Quote className="h-3.5 w-3.5 mr-1.5" />
+              <Quote className="h-4 w-4 mr-2" />
               Get a Free Quote
             </Link>
           </div>
@@ -189,7 +206,7 @@ const Header = () => {
                   <div key={item.name}>
                     <button
                       onClick={() => item.dropdown && toggleDropdown(item.name)}
-                      className="flex items-center justify-between w-full text-left text-gray-700 hover:text-blue-600 px-3 py-3 text-sm font-medium rounded-lg hover:bg-gray-50"
+                      className="flex items-center justify-between w-full text-left text-gray-700 hover:text-primary-blue px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-50"
                     >
                       <div className="flex items-center">
                         <IconComponent className="h-4 w-4 mr-3" />
@@ -212,7 +229,7 @@ const Header = () => {
                             <Link
                               key={dropdownItem.name}
                               href={dropdownItem.href}
-                              className="flex items-center text-gray-600 hover:text-blue-600 px-3 py-2 text-sm rounded-lg hover:bg-gray-50"
+                              className="flex items-center text-gray-600 hover:text-primary-blue px-4 py-2.5 text-sm rounded-lg hover:bg-gray-50"
                             >
                               <DropdownIcon className="h-4 w-4 mr-3" />
                               {dropdownItem.name}
@@ -227,16 +244,16 @@ const Header = () => {
               <div className="pt-4 space-y-2 border-t border-gray-100">
                 <Link
                   href="/contact"
-                  className="flex items-center text-gray-700 hover:text-blue-600 px-3 py-3 text-sm font-medium rounded-lg hover:bg-gray-50"
+                  className="flex items-center text-gray-700 hover:text-primary-blue px-4 py-3 text-base font-medium rounded-lg hover:bg-gray-50"
                 >
-                  <Phone className="h-4 w-4 mr-3" />
+                  <Phone className="h-5 w-5 mr-3" />
                   Contact Us
                 </Link>
                 <Link
                   href="/quote"
-                  className="flex items-center bg-blue-600 text-white px-3 py-3 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+                  className="flex items-center bg-primary-blue text-white px-4 py-3 rounded-lg text-base font-medium hover:bg-blue-700 transition-colors duration-200"
                 >
-                  <Quote className="h-4 w-4 mr-3" />
+                  <Quote className="h-5 w-5 mr-3" />
                   Get a Free Quote
                 </Link>
               </div>

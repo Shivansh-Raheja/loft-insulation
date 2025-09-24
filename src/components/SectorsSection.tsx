@@ -39,12 +39,12 @@ const SectorsSection = () => {
               >
                 <div className="p-8">
                   {/* Icon */}
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors duration-300">
-                    <IconComponent className="h-8 w-8 text-green-600 group-hover:text-white transition-colors duration-300" />
+                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-blue transition-colors duration-300">
+                    <IconComponent className="h-8 w-8 text-primary-blue group-hover:text-white transition-colors duration-300" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary-blue transition-colors duration-300">
                     {sector.title}
                   </h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -54,7 +54,7 @@ const SectorsSection = () => {
                   {/* CTA */}
                   <Link
                     href={sector.href}
-                    className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors duration-200 group/link"
+                    className="inline-flex items-center text-primary-blue font-semibold hover:text-blue-700 transition-colors duration-200 group/link"
                   >
                     Explore Sector
                     <ArrowRight className="h-4 w-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-200" />
@@ -68,25 +68,6 @@ const SectorsSection = () => {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Don&apos;t See Your Sector?
-            </h3>
-            <p className="text-green-100 mb-6 max-w-2xl mx-auto">
-              We work with clients across all industries and property types. 
-              Contact us to discuss your specific requirements.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-200"
-            >
-              Contact Us Today
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );

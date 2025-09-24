@@ -7,20 +7,35 @@ import { cn } from '@/lib/utils';
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(timer);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    const cardsPerView = isMobile ? 1 : 3;
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % Math.ceil(testimonials.length / cardsPerView));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [isMobile]);
+
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    const cardsPerView = isMobile ? 1 : 3;
+    setCurrentIndex((prev) => (prev + 1) % Math.ceil(testimonials.length / cardsPerView));
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    const cardsPerView = isMobile ? 1 : 3;
+    setCurrentIndex((prev) => (prev - 1 + Math.ceil(testimonials.length / cardsPerView)) % Math.ceil(testimonials.length / cardsPerView));
   };
 
   const goToTestimonial = (index: number) => {
@@ -28,69 +43,69 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-900 text-white">
+    <section className="py-12 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             What Our Customers Say
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Don&apos;t just take our word for it. Here&apos;s what our satisfied customers have to say 
             about their loft insulation experience.
           </p>
         </div>
 
-        {/* Testimonials Carousel */}
+        {/* Testimonials Grid - Responsive Cards */}
         <div className="relative">
           <div className="overflow-hidden">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{ 
+                transform: `translateX(-${currentIndex * (isMobile ? 100 : 33.333)}%)` 
+              }}
             >
               {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="w-full flex-shrink-0">
-                  <div className="max-w-4xl mx-auto px-4">
-                    <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
-                      {/* Quote Icon */}
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8">
-                        <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                <div key={testimonial.id} className="w-full md:w-1/3 flex-shrink-0 px-2">
+                  <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-xl p-4 text-center shadow-lg h-full">
+                    {/* Quote Icon */}
+                    <div className="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Quote className="h-4 w-4 text-white" />
+                    </div>
+
+                    {/* Testimonial Content */}
+                    <blockquote className="text-sm text-gray-800 mb-4 leading-relaxed font-medium line-clamp-4">
+                      &ldquo;{testimonial.content}&rdquo;
+                    </blockquote>
+
+                    {/* Rating */}
+                    <div className="flex justify-center mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={cn(
+                            'h-3 w-3',
+                            i < testimonial.rating
+                              ? 'text-yellow-500 fill-current'
+                              : 'text-gray-300'
+                          )}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Customer Info */}
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="w-8 h-8 bg-gradient-to-br from-primary-blue to-secondary-blue rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">
+                          {testimonial.name.charAt(0)}
+                        </span>
                       </div>
-
-                      {/* Testimonial Content */}
-                      <blockquote className="text-lg sm:text-xl md:text-2xl text-gray-800 mb-6 sm:mb-8 leading-relaxed font-medium">
-                        &ldquo;{testimonial.content}&rdquo;
-                      </blockquote>
-
-                      {/* Rating */}
-                      <div className="flex justify-center mb-4 sm:mb-6">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={cn(
-                              'h-5 w-5 sm:h-6 sm:w-6',
-                              i < testimonial.rating
-                                ? 'text-yellow-500 fill-current'
-                                : 'text-gray-300'
-                            )}
-                          />
-                        ))}
-                      </div>
-
-                      {/* Customer Info */}
-                      <div className="flex items-center justify-center space-x-3 sm:space-x-4">
-                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-lg sm:text-xl">
-                            {testimonial.name.charAt(0)}
-                          </span>
+                      <div className="text-left">
+                        <div className="text-sm font-semibold text-gray-900">
+                          {testimonial.name}
                         </div>
-                        <div className="text-left">
-                          <div className="text-base sm:text-lg font-semibold text-gray-900">
-                            {testimonial.name}
-                          </div>
-                          <div className="text-sm sm:text-base text-gray-600">
-                            {testimonial.location}
-                          </div>
+                        <div className="text-xs text-gray-600">
+                          {testimonial.location}
                         </div>
                       </div>
                     </div>
@@ -103,48 +118,34 @@ const TestimonialsSection = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-gray-700" />
+            <ChevronLeft className="h-4 w-4 text-gray-700" />
           </button>
           <button
             onClick={nextTestimonial}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full flex items-center justify-center transition-all duration-200 shadow-lg hover:shadow-xl"
           >
-            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-gray-700" />
+            <ChevronRight className="h-4 w-4 text-gray-700" />
           </button>
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center space-x-2 mt-8">
-          {testimonials.map((_, index) => (
+        <div className="flex justify-center space-x-2 mt-6">
+          {Array.from({ length: Math.ceil(testimonials.length / (isMobile ? 1 : 3)) }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
               className={cn(
-                'w-3 h-3 rounded-full transition-all duration-200',
+                'w-2 h-2 rounded-full transition-all duration-200',
                 index === currentIndex
-                  ? 'bg-blue-600 w-8'
+                  ? 'bg-primary-blue w-6'
                   : 'bg-white bg-opacity-60 hover:bg-opacity-80'
               )}
             />
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Join Our Satisfied Customers?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Get your free quote today and start saving on energy bills with professional loft insulation.
-            </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
-              Get Your Free Quote
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

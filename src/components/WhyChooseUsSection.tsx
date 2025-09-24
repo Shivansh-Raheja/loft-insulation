@@ -54,14 +54,14 @@ const WhyChooseUsSection = () => {
 
   const getColorClasses = (color: string) => {
     const colorMap = {
-      blue: 'bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
-      yellow: 'bg-yellow-100 text-yellow-600 group-hover:bg-yellow-600 group-hover:text-white',
-      green: 'bg-green-100 text-green-600 group-hover:bg-green-600 group-hover:text-white',
-      purple: 'bg-purple-100 text-purple-600 group-hover:bg-purple-600 group-hover:text-white',
-      indigo: 'bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white',
-      orange: 'bg-orange-100 text-orange-600 group-hover:bg-orange-600 group-hover:text-white',
-      pink: 'bg-pink-100 text-pink-600 group-hover:bg-pink-600 group-hover:text-white',
-      emerald: 'bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white',
+      blue: 'bg-blue-100 text-primary-blue group-hover:bg-primary-blue group-hover:text-white',
+      yellow: 'bg-cyan-100 text-secondary-blue group-hover:bg-secondary-blue group-hover:text-white',
+      green: 'bg-blue-100 text-primary-blue group-hover:bg-primary-blue group-hover:text-white',
+      purple: 'bg-cyan-100 text-secondary-blue group-hover:bg-secondary-blue group-hover:text-white',
+      indigo: 'bg-blue-100 text-primary-blue group-hover:bg-primary-blue group-hover:text-white',
+      orange: 'bg-cyan-100 text-secondary-blue group-hover:bg-secondary-blue group-hover:text-white',
+      pink: 'bg-blue-100 text-primary-blue group-hover:bg-primary-blue group-hover:text-white',
+      emerald: 'bg-cyan-100 text-secondary-blue group-hover:bg-secondary-blue group-hover:text-white',
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };

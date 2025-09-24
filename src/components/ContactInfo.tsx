@@ -70,7 +70,7 @@ const ContactInfo = () => {
             return (
               <div key={index} className="flex items-start space-x-3">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+                  <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-primary-blue" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-1">
@@ -91,7 +91,7 @@ const ContactInfo = () => {
       </div>
 
       {/* Stats - Compact Version */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl lg:rounded-2xl shadow-xl p-4 sm:p-6 text-white">
+      <div className="bg-gradient-to-r from-primary-blue to-secondary-blue rounded-xl lg:rounded-2xl shadow-xl p-4 sm:p-6 text-white">
         <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Why Choose Us?</h3>
         <div className="grid grid-cols-2 gap-3 sm:gap-4">
           {stats.map((stat, index) => (

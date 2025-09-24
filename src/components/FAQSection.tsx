@@ -53,7 +53,7 @@ const FAQSection = () => {
                   </h3>
                   <div className="flex-shrink-0">
                     {isExpanded ? (
-                      <ChevronUp className="h-6 w-6 text-blue-600" />
+                      <ChevronUp className="h-6 w-6 text-primary-blue" />
                     ) : (
                       <ChevronDown className="h-6 w-6 text-gray-400" />
                     )}
@@ -80,26 +80,6 @@ const FAQSection = () => {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Still Have Questions?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Our expert team is here to help. Contact us for personalized advice 
-              and answers to all your insulation questions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200">
-                Contact Our Experts
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200">
-                Call: 0123 456 789
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

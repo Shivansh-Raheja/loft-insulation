@@ -3,7 +3,7 @@ import { ArrowRight, Phone, Calendar } from 'lucide-react';
 
 const CTABanner = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 relative">
+    <section className="py-20 bg-gradient-to-r from-primary-blue via-blue-700 to-secondary-blue relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           {/* Main CTA */}
@@ -21,7 +21,7 @@ const CTABanner = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
             <Link
               href="/survey"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 text-lg font-semibold rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-blue text-lg font-semibold rounded-lg hover:bg-blue-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               <Calendar className="h-6 w-6 mr-2" />
               Book Free Survey
@@ -29,7 +29,7 @@ const CTABanner = () => {
             </Link>
             <Link
               href="tel:+44123456789"
-              className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white text-lg font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-blue-600 transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-white text-lg font-semibold rounded-lg border-2 border-white hover:bg-white hover:text-primary-blue transition-all duration-200"
             >
               <Phone className="h-6 w-6 mr-2" />
               Call Now: 0123 456 789

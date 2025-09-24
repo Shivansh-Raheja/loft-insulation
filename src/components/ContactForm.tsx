@@ -109,7 +109,7 @@ const ContactForm = () => {
                 value={formData.firstName}
                 onChange={handleInputChange}
                 required
-                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors duration-200"
                 placeholder="First name"
               />
             </div>
@@ -128,7 +128,7 @@ const ContactForm = () => {
                 value={formData.lastName}
                 onChange={handleInputChange}
                 required
-                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors duration-200"
                 placeholder="Last name"
               />
             </div>
@@ -150,7 +150,7 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors duration-200"
                 placeholder="Email address"
               />
             </div>
@@ -169,7 +169,7 @@ const ContactForm = () => {
                 value={formData.phone}
                 onChange={handleInputChange}
                 required
-                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors duration-200"
                 placeholder="Phone number"
               />
             </div>
@@ -189,7 +189,7 @@ const ContactForm = () => {
               name="company"
               value={formData.company}
               onChange={handleInputChange}
-              className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+              className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors duration-200"
               placeholder="Company name (optional)"
             />
           </div>
@@ -207,7 +207,7 @@ const ContactForm = () => {
               value={formData.serviceInterest}
               onChange={handleInputChange}
               required
-              className="w-full pl-3 sm:pl-4 pr-8 sm:pr-10 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 appearance-none bg-white"
+              className="w-full pl-3 sm:pl-4 pr-8 sm:pr-10 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors duration-200 appearance-none bg-white"
             >
               <option value="">Select a service</option>
               {serviceOptions.map((service) => (
@@ -234,7 +234,7 @@ const ContactForm = () => {
               onChange={handleInputChange}
               required
               rows={4}
-              className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none"
+              className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-blue focus:border-primary-blue transition-colors duration-200 resize-none"
               placeholder="Tell us about your project..."
             />
           </div>
@@ -246,7 +246,7 @@ const ContactForm = () => {
             type="submit"
             disabled={isSubmitting}
             className={cn(
-              'w-full flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base',
+              'w-full flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary-blue text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base',
               isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'
             )}
           >

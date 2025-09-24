@@ -37,7 +37,7 @@ const ContactStats = () => {
           return (
             <div key={index} className="text-center">
               <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-blue-100 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3">
-                <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-blue-600" />
+                <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-primary-blue" />
               </div>
               <div className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-1">{stat.number}</div>
               <div className="text-xs sm:text-sm font-semibold text-gray-700 mb-1">{stat.label}</div>

@@ -45,7 +45,7 @@ const BlogPreviewSection = () => {
                   </div>
                 </div>
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-primary-blue text-white px-3 py-1 rounded-full text-sm font-medium">
                     Featured
                   </span>
                 </div>
@@ -70,7 +70,7 @@ const BlogPreviewSection = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-blue transition-colors duration-300 line-clamp-2">
                   {post.title}
                 </h3>
 
@@ -82,7 +82,7 @@ const BlogPreviewSection = () => {
                 {/* CTA */}
                 <Link
                   href={post.href}
-                  className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-200 group/link"
+                  className="inline-flex items-center text-primary-blue font-semibold hover:text-blue-700 transition-colors duration-200 group/link"
                 >
                   Read More
                   <ArrowRight className="h-4 w-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-200" />
@@ -92,28 +92,6 @@ const BlogPreviewSection = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Want More Expert Insights?
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Subscribe to our newsletter and get the latest tips, guides, and industry updates 
-              delivered straight to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

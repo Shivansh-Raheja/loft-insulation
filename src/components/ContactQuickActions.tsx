@@ -53,14 +53,14 @@ const ContactQuickActions = () => {
                 <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
               </div>
               <div className="ml-3 sm:ml-4 flex-1 min-w-0">
-                <h4 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                <h4 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 group-hover:text-primary-blue transition-colors duration-200">
                   {action.title}
                 </h4>
                 <p className="text-gray-600 text-xs sm:text-sm">
                   {action.description}
                 </p>
               </div>
-              <div className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 text-xs sm:text-sm">
+              <div className="flex items-center text-primary-blue font-semibold group-hover:text-blue-700 text-xs sm:text-sm">
                 {action.action}
                 <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
               </div>

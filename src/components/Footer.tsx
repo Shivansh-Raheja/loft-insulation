@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -35,12 +36,15 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">LIS</span>
+              <div className="h-10 w-auto">
+                <Image
+                  src="/image.png"
+                  alt="Loft Insulation Services"
+                  width={120}
+                  height={40}
+                  className="h-full w-auto object-contain"
+                />
               </div>
-              <span className="ml-2 text-xl font-bold">
-                Loft Insulation Services
-              </span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your trusted partner for professional loft insulation services across the UK. 
@@ -117,7 +121,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-secondary-blue mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">
                     123 Business Street<br />
@@ -126,7 +130,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                <Phone className="h-5 w-5 text-secondary-blue flex-shrink-0" />
                 <a
                   href="tel:+44123456789"
                   className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
@@ -135,7 +139,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                <Mail className="h-5 w-5 text-secondary-blue flex-shrink-0" />
                 <a
                   href="mailto:info@loftinsulationservices.co.uk"
                   className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"

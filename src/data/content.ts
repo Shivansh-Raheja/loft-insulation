@@ -75,6 +75,13 @@ export const sectors: Sector[] = [
     href: '/sectors/landlords-property-managers'
   },
   {
+    id: 'public-sector',
+    title: 'Public Sector',
+    description: 'Specialized insulation solutions for government buildings, schools, hospitals, and public facilities.',
+    icon: 'Shield',
+    href: '/sectors/public-sector'
+  },
+  {
     id: 'countries-locations',
     title: 'Countries / Locations',
     description: 'Nationwide coverage across the UK with certified installers in every region.',

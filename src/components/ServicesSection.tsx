@@ -40,12 +40,12 @@ const ServicesSection = () => {
               >
                 <div className="p-6 lg:p-8">
                   {/* Icon */}
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-blue-600 transition-colors duration-300">
-                    <IconComponent className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-primary-blue transition-colors duration-300">
+                    <IconComponent className="h-6 w-6 sm:h-8 sm:w-8 text-primary-blue group-hover:text-white transition-colors duration-300" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 group-hover:text-primary-blue transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
@@ -69,25 +69,6 @@ const ServicesSection = () => {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12 lg:mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl lg:rounded-2xl p-6 lg:p-8 text-white">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4">
-              Need a Custom Solution?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
-              Our experts can create a tailored insulation plan for your specific needs. 
-              Get a free consultation and quote today.
-            </p>
-            <Link
-              href="/quote"
-              className="inline-flex items-center bg-white text-blue-600 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 text-sm sm:text-base"
-            >
-              Get Free Consultation
-              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 ml-2" />
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );
