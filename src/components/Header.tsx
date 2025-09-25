@@ -1,18 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
   Menu, X, ChevronDown, Quote, Home, Info, Star, 
   Wrench, Building, Users, Key, MapPin, Layers, Wind, 
-  Droplets, Square, Sun, Leaf, Syringe, Box, Package
+  Droplets, Square, Sun, Leaf, Syringe, Box, Package, Shield
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const shouldBeScrolled = scrollTop > 20;
+      setIsScrolled(shouldBeScrolled);
+    };
+
+    // Set initial state
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const services = [
     { name: 'Loft Insulation Installation', href: '/services/loft-insulation-installation', icon: 'Home' },
@@ -57,7 +72,7 @@ const Header = () => {
   const getIcon = (iconName: string) => {
     const icons = {
       Home, Info, Star, Wrench, Building, Users, Key, MapPin, 
-      Layers, Wind, Droplets, Square, Sun, Leaf, Syringe, Box, Package
+      Layers, Wind, Droplets, Square, Sun, Leaf, Syringe, Box, Package, Shield
     };
     return icons[iconName as keyof typeof icons] || Home;
   };
@@ -76,7 +91,12 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className={cn(
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+      isScrolled 
+        ? "bg-white/70 backdrop-blur-md shadow-lg" 
+        : "bg-white shadow-md"
+    )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

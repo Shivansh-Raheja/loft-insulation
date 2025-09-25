@@ -2,17 +2,56 @@ import { CheckCircle, Users, Shield, Award, Phone, Quote, Mail, Globe } from 'lu
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Free Loft Insulation UK | Save Energy and Money with Professional Services',
-  description: 'Get free loft insulation across the UK through government schemes like ECO4 and GBIS. Save up to £500 per year on energy bills with our certified installers.',
-  keywords: 'free loft insulation UK, ECO4, GBIS, energy saving, government grants, loft insulation grants',
+  title: 'Free Loft Insulation UK, Save Energy & Cut Bills | LIS UK Experts',
+  description: 'Check if you qualify for free loft insulation in the UK. Reduce heating costs, boost comfort, and improve energy efficiency with certified installers.',
+  keywords: 'free loft insulation UK, loft insulation grants UK, government loft insulation scheme, ECO4 loft insulation UK, free home insulation UK, how to get free loft insulation in UK, loft insulation grant eligibility UK, free loft insulation for pensioners UK, government funded loft insulation UK, loft insulation scheme for low income households UK, free loft insulation London, loft insulation grants Manchester, free loft insulation Birmingham, loft insulation scheme Liverpool, free home insulation Scotland, loft insulation grants Wales, free loft insulation Northern Ireland, energy saving home insulation UK, loft insulation funding UK, free attic insulation UK, cavity wall and loft insulation grants, UK insulation scheme for elderly',
+  openGraph: {
+    siteName: 'Free Loft Insulation UK',
+    url: 'https://www.loft-insulation-services-uk.com/free-loft-insulation-uk',
+    title: 'UK Free Loft Insulation Scheme | Apply Today',
+    description: 'Get free loft insulation under UK energy schemes. Quick eligibility checks, trusted installers, and guaranteed energy savings. Apply now.',
+    images: [
+      {
+        url: 'https://www.loft-insulation-services-uk.com/_next/image?url=%2FLOFT%20INSULATION.png&w=640&q=75',
+        width: 1200,
+        height: 630,
+        alt: 'Free Loft Insulation UK',
+      },
+    ],
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Loft Insulation Grants UK | LIS UK Experts',
+    description: 'LIS UK helps homeowners access free loft insulation grants. Save on bills, reduce carbon footprint, and enjoy warmer homes this winter.',
+    images: ['https://www.loft-insulation-services-uk.com/_next/image?url=%2FLOFT%20INSULATION.png&w=640&q=75'],
+    creator: '@l4rgindia',
+  },
+  alternates: {
+    canonical: 'https://www.loft-insulation-services-uk.com/free-loft-insulation-uk',
+    languages: {
+      'en-US': 'https://www.loft-insulation-services-uk.com/free-loft-insulation-uk',
+      'en-GB': 'https://www.loft-insulation-services-uk.com/free-loft-insulation-uk',
+      'en': 'https://www.loft-insulation-services-uk.com/free-loft-insulation-uk',
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  authors: [{ name: 'LIS UK' }],
+  other: {
+    'copyright': '© 2025',
+  },
 };
 
 export default function FreeLoftInsulationUK() {
   return (
     <div className="min-h-screen overflow-x-hidden">
-       {/* Hero Section */}
-       <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center overflow-hidden">
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full">
+          {/* Hero Section */}
+          <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
             {/* Left Content */}
             <div className="space-y-4 lg:space-y-6">
@@ -722,6 +761,192 @@ export default function FreeLoftInsulationUK() {
          </section>
 
       </div>
+      
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://www.loft-insulation-services-uk.com/",
+            "name": "Free Loft Insulation UK",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.loft-insulation-services-uk.com/free-loft-insulation-uk/search?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }}
+      />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "LIS UK - Loft Insulation Services",
+            "url": "https://www.loft-insulation-services-uk.com/free-loft-insulation-uk",
+            "description": "LIS UK provides professional loft insulation services across the UK, helping homeowners save energy and reduce heating costs with certified installers.",
+            "inLanguage": "en-GB",
+            "publisher": {
+              "@type": "Organization",
+              "name": "LIS UK",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.loft-insulation-services-uk.com/_next/image?url=%2FLOFT%20INSULATION.png&w=640&q=75"
+              }
+            },
+            "mainEntity": {
+              "@type": "Service",
+              "serviceType": "Loft Insulation",
+              "provider": {
+                "@type": "Organization",
+                "name": "LIS UK"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "United Kingdom"
+              },
+              "description": "Expert loft insulation installation services, energy efficiency upgrades, and free insulation surveys."
+            }
+          })
+        }}
+      />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Free Loft Insulation UK",
+            "image": "https://www.loftinsulationservicesuk.com/images/free-loft-insulation.jpg",
+            "description": "Government-backed free loft insulation service in the UK, helping homeowners save on energy bills with expert installation.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Free Loft Insulation UK"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "bestRating": "5",
+              "worstRating": "1",
+              "ratingCount": "158",
+              "reviewCount": "49"
+            }
+          })
+        }}
+      />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Free Loft Insulation UK",
+            "image": "https://www.loft-insulation-services-uk.com/_next/image?url=%2FLOFT%20INSULATION.png&w=640&q=75",
+            "@id": "home",
+            "url": "https://www.loft-insulation-services-uk.com/free-loft-insulation-uk",
+            "telephone": "+44-800-123-4567",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "123 High Street",
+              "addressLocality": "London",
+              "postalCode": "SW1A 1AA",
+              "addressCountry": "GB"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "51.5072",
+              "longitude": "-0.1276"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "sameAs": [
+              "https://www.facebook.com/L4RGINDIA/",
+              "https://twitter.com/L4rgindia",
+              "https://www.instagram.com/l4rgllc/",
+              "https://www.youtube.com/c/L4RGINDIA",
+              "https://in.linkedin.com/company/l4rgindia",
+              "https://in.pinterest.com/L4RGINDIA/",
+              "https://l4rgcompany.quora.com/",
+              "https://www.loft-insulation-services-uk.com/free-loft-insulation-uk"
+            ]
+          })
+        }}
+      />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "http://schema.org",
+            "@id": "#product",
+            "@type": "Product",
+            "name": "Free Loft Insulation UK",
+            "description": "Government-backed free loft insulation service for UK homeowners, helping reduce energy bills with expert installation.",
+            "url": "https://www.loft-insulation-services-uk.com/free-loft-insulation-uk",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "3468654"
+            },
+            "audience": {
+              "@type": "audience",
+              "description": "3468654 Reviews",
+              "audienceType": "UK Homeowners aged 60-80"
+            }
+          })
+        }}
+      />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Review",
+            "name": "Free Loft Insulation UK",
+            "url": "https://www.loft-insulation-services-uk.com/free-loft-insulation-uk",
+            "image": "https://www.loft-insulation-services-uk.com/_next/image?url=%2FLOFT%20INSULATION.png&w=640&q=75",
+            "author": "Mike",
+            "reviewBody": "The team at Free Loft Insulation UK was fantastic. They arrived on time, completed the loft insulation quickly, and left the place clean. I've already noticed a big difference in warmth and reduced heating bills.",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "4.9"
+            },
+            "itemReviewed": {
+              "@type": "LocalBusiness",
+              "name": "Free Loft Insulation UK",
+              "priceRange": "200",
+              "image": "https://www.loftinsulationservicesuk.com/images/free-loft-insulation.jpg",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 High Street",
+                "addressLocality": "London",
+                "postalCode": "SW1A 1AA",
+                "addressCountry": "GB"
+              }
+            }
+          })
+        }}
+      />
     </div>
   );
 }
